@@ -1,0 +1,15 @@
+public Tree gett() {
+    Tree t = new Tree(t);
+}
+public Tree gete() {
+    Tree e = new Tree(e);
+}
+public Tree getf() {
+    Tree f = new Tree(f);
+}
+public Tree gete1() {
+    Tree e1 = new Tree(e1);
+}
+public Tree gett1() {
+    Tree t1 = new Tree(t1);
+}

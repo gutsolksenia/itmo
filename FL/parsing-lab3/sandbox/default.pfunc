@@ -1,0 +1,71 @@
+data Bool = False | True
+
+data Nat = S Nat | Z
+
+data NatList = Con Nat NatList | Nil
+
+One : Nat
+One = S Z
+
+Two : Nat
+Two = S One
+
+Three : Nat
+Three = S Two
+
+add : Nat -> Nat -> Nat
+add Z     y = y
+add (S x) y = S (add x y)
+
+Ones : NatList
+Ones = Con One Ones
+
+take : Nat -> NatList -> NatList
+take Z     l         = Nil
+take x     Nil       = Nil
+take (S n) (Con x l) = Con x (take n l)
+
+sum : NatList -> Nat
+sum Nil = Z
+sum (Con x l) = add x (sum l)
+
+> sum (take Three Ones)
+
+gte : Nat -> Nat -> Bool
+gte x     Z     = True
+gte Z     x     = False
+gte (S x) (S y) = gte x y
+
+ls : Nat -> Nat -> Bool
+ls x     Z     = False
+ls Z     x     = True
+ls (S x) (S y) = ls x y
+
+appendIf: Bool -> Nat -> NatList -> NatList
+appendIf True  x l = Con x l
+appendIf False x l = l
+
+filterGte : Nat -> NatList -> NatList
+filterGte t Nil       = Nil
+filterGte t (Con x l) = appendIf (gte x t) x (filterGte t l)
+
+filterLs : Nat -> NatList -> NatList
+filterLs t Nil       = Nil
+filterLs t (Con x l) = appendIf (ls x t) x (filterLs t l)
+
+append : NatList -> NatList -> NatList
+append Nil        l2 = l2
+append (Con x l1) l2 = Con x (append l1 l2)
+
+sort : NatList -> NatList
+sort Nil       = Nil
+sort (Con x l) = append (sort (filterLs x l)) (Con x (sort (filterGte x l)))
+
+sample_list : NatList
+sample_list = Con Three (Con One (Con Two Nil))
+
+doubled_list : NatList
+doubled_list = append sample_list sample_list
+
+> doubled_list
+> sort doubled_list

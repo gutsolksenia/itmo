@@ -1,0 +1,45 @@
+@header {
+package ru.itmo.gutsol.translation.autogen;
+}
+
+start -> Integer
+    : t e1[{return t.get(0);}] {return e1.get(0);}
+    ;
+
+e1[Integer acc] -> Integer
+    : PLUS t e1[{return acc + t.get(0);}] {return e1.get(0);}
+    | MINUS t e1[{return acc - t.get(0);}] {return e1.get(0);}
+    | {return acc;}
+    ;
+
+t -> Integer
+    : g t1[{return g.get(0);}] {return t1.get(0);}
+    ;
+
+t1[Integer acc] -> Integer
+    : MUL g t1[{return g.get(0) * acc;}] {return t1.get(0);}
+    | {return acc;}
+    ;
+
+g -> Integer
+    : f g1[{return f.get(0);}] {return g1.get(0);}
+    ;
+
+g1[Integer acc] -> Integer
+    : DEG f g1[{return f.get(0);}] {Integer res = 1; for(int i = 0; i < g1.get(0); i++) {res *= acc;} return res;}
+    | {return acc;}
+    ;
+
+f -> Integer
+    : NUMBER {return Integer.valueOf(NUMBER.get(0));}
+    | OPEN_BRACKET start CLOSE_BRACKET {return start.get(0);}
+    ;
+
+WS: " " -> skip;
+OPEN_BRACKET: "\\(";
+CLOSE_BRACKET: "\\)";
+PLUS: "\\+";
+MINUS: "-";
+MUL: "\\*";
+DEG: "\\*\\*";
+NUMBER : "[0-9]+";

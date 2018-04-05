@@ -1,0 +1,26 @@
+Benchmark                           Mode  Cnt  Score    Error   Units
+Benchmarks.incThreadCount          thrpt   50  0,560 ±  0,001  ops/ns
+FalseSharing.baseline              thrpt   50  0,880 ±  0,011  ops/ns
+FalseSharing.baseline:reader       thrpt   50  0,210 ±  0,011  ops/ns
+FalseSharing.baseline:writer       thrpt   50  0,670 ±  0,013  ops/ns
+FalseSharing.padded                thrpt   50  0,953 ±  0,010  ops/ns
+FalseSharing.padded:reader         thrpt   50  0,294 ±  0,007  ops/ns
+FalseSharing.padded:writer         thrpt   50  0,659 ±  0,015  ops/ns
+Locks.lockBenchmark                thrpt   50  0,034 ±  0,001  ops/ns
+Locks.lockThreads                  thrpt   50  0,103 ±  0,001  ops/ns
+Locks.syncronizedBenchmark         thrpt   50  0,025 ±  0,001  ops/ns
+Locks.syncronizedThread            thrpt   50  0,101 ±  0,001  ops/ns
+Locks.volatileBenchmark            thrpt   50  0,625 ±  0,001  ops/ns
+Locks.volatileThread               thrpt   50  0,212 ±  0,001  ops/ns
+Volatile.baselineBenchmark         thrpt   50  0,548 ±  0,012  ops/ns
+Volatile.baselineBenchmark:reader  thrpt   50  0,058 ±  0,005  ops/ns
+Volatile.baselineBenchmark:writer  thrpt   50  0,490 ±  0,013  ops/ns
+Volatile.baselineThread            thrpt   50  0,951 ±  0,010  ops/ns
+Volatile.baselineThread:reader     thrpt   50  0,297 ±  0,008  ops/ns
+Volatile.baselineThread:writer     thrpt   50  0,654 ±  0,015  ops/ns
+Volatile.volatileBenchmark         thrpt   50  0,546 ±  0,013  ops/ns
+Volatile.volatileBenchmark:reader  thrpt   50  0,063 ±  0,006  ops/ns
+Volatile.volatileBenchmark:writer  thrpt   50  0,483 ±  0,014  ops/ns
+Volatile.volatileThread            thrpt   50  0,494 ±  0,011  ops/ns
+Volatile.volatileThread:reader     thrpt   50  0,358 ±  0,010  ops/ns
+Volatile.volatileThread:writer     thrpt   50  0,136 ±  0,004  ops/ns

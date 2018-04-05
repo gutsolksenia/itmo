@@ -1,0 +1,6 @@
+#surefire
+#Mon Jan 09 22:09:38 MSK 2017
+user.dir=/home/ksenia/workspace/itmo/mpp/LockFreeBank
+idea.version=2016.2.5
+localRepository=/home/ksenia/.m2/repository
+basedir=/home/ksenia/workspace/itmo/mpp/LockFreeBank

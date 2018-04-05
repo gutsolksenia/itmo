@@ -1,0 +1,21 @@
+ARROW=8
+LITERAL=11
+LPAR=6
+RPAR=7
+COLON=5
+RUN=9
+WS=1
+EQ=3
+DISJ=4
+NEW_LINE=2
+DATA_KEYWORD=10
+'>'=9
+'='=3
+'|'=4
+':'=5
+')'=7
+'('=6
+'data'=10
+'\n'=2
+'->'=8
+' '=1

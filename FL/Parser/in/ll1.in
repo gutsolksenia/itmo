@@ -1,0 +1,5 @@
+grammar ll1;
+
+s: 'c' m s | '%%%';
+
+m: 'a' | 'b';

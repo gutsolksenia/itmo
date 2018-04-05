@@ -1,0 +1,16 @@
+WORD=8
+OB=3
+OR=6
+LIIERAL=10
+UN_OP=9
+SEMI=5
+END=7
+T__0=1
+WS=2
+CB=4
+'grammar'=1
+'|'=6
+';'=7
+':'=5
+')'=4
+'('=3
